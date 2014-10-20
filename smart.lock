@@ -1,0 +1,15 @@
+{
+  "meteor": {},
+  "dependencies": {
+    "basePackages": {
+      "buzz.js": {}
+    },
+    "packages": {
+      "buzz.js": {
+        "git": "https://github.com/brentjanderson/meteor-buzz.git",
+        "tag": "v1.1.4",
+        "commit": "6ddceb8ecb4938695a2491eff0616246344c8660"
+      }
+    }
+  }
+}

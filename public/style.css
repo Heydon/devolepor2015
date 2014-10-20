@@ -1,1 +1,264 @@
-/* CSS declarations go here */
+@import url(http://fonts.googleapis.com/css?family=Press+Start+2P);
+
+/*
+NORMALIZE.CSS
+-------------------------------------------------------------------------------
+*/
+
+html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 40px}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
+
+*, *::before, *::after {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	font-weight: 400;
+}
+
+/*
+LAYOUT
+-------------------------------------------------------------------------------
+*/
+
+body {
+	background: #1a1a1a;
+	color: #fff;
+	font-size: 1vw;
+	font-family: 'Press Start 2P', monospace;
+}
+
+main {
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	display: table;
+	width: 100%;
+	box-shadow: inset 0 0 100px #000;
+}
+
+main > div {
+	display: table-cell;
+	height: 100vh;
+	vertical-align: middle;
+	text-align: center;
+}
+
+/*
+SVGs
+-------------------------------------------------------------------------------
+*/
+
+#title {
+  display: block;
+  margin: 0 auto;
+  height: 60vh;
+}
+
+@-webkit-keyframes regularFlash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes regularFlash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+#asterisks > path {
+  -webkit-animation: regularFlash 1s steps(1) infinite;
+          animation: regularFlash 1s steps(1) infinite;
+}
+
+#asterisks > path:nth-child(2n) {
+  -webkit-animation-delay: 0.25s;
+          animation-delay: 0.25s;
+}
+
+#devolepor {
+  display: block;
+  margin: 0 auto;
+  height: 70vh;
+}
+
+@-webkit-keyframes regularFlash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes regularFlash {
+  0% { opacity: 1; }
+  50% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@-webkit-keyframes doubleBlink {
+  0% { opacity: 1; }
+  80% { opacity: 0; }
+  85% { opacity: 1; }
+  90% { opacity: 0; }
+  95% { opacity: 1; } 
+}
+
+@keyframes doubleBlink {
+  0% { opacity: 1; }
+  80% { opacity: 0; }
+  85% { opacity: 1; }
+  90% { opacity: 0; }
+  95% { opacity: 1; } 
+}
+
+#sweat {
+  -webkit-animation: regularFlash 1s steps(1) infinite;
+          animation: regularFlash 1s steps(1) infinite; 
+}
+
+#eyes {
+  -webkit-animation: doubleBlink 3s steps(1) infinite;
+          animation: doubleBlink 3s steps(1) infinite; 
+}
+
+/*
+CONTROLS / FORMS
+-------------------------------------------------------------------------------
+*/
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+legend {
+	position: absolute;
+	top: -9999px;
+}
+
+button {
+  line-height: 1;
+  border: 0;
+  background: #00ccff;
+  font-family: 'Press Start 2P', sans-serif;
+  font-weight: 400;
+  font-size: 5vh;
+  margin-top: 0.75em;
+  padding:0.5em 1em;
+  color: #1a1a1a;
+}
+
+button:hover, button:focus {
+  outline: 0.125em solid #00ccff;
+  outline-offset: 0.125em;
+}
+
+/*
+SKILLS INPUTS
+-------------------------------------------------------------------------------
+*/
+
+.skills-inputs, #devolepor {
+	display: inline-block;
+	height: 70vh;
+	vertical-align: middle;
+}
+
+#devolepor {
+	width: 25%;
+}
+
+.skills-inputs {
+	width: 65%;
+}
+
+.skills-inputs input[type="checkbox"] {
+  position: absolute;
+  top: -9999px;
+}
+
+.skills-inputs {
+	text-align: left;
+}
+
+.skills-inputs label > span {
+  display: inline-block;
+  width: 45%;
+  font-size: 1.5vw;
+  color: #00ccff;
+  cursor: pointer;
+  padding: 0.33em;
+}
+
+.skills-inputs label > span:before {
+	content: '';
+	display: inline-block;
+	width: 0.75em;
+	height: 0.75em;
+	margin-right: 0.75em;
+	outline: 0.125em solid #00ccff;
+	outline-offset: 0.25em;
+	vertical-align: 0.125em;
+}
+
+[type="checkbox"] + span [aria-hidden] {
+	position: relative;
+	left: 1em;
+	color: #1a1a1a;
+	transition: left steps(2) 0.25s;
+}
+
+[type="checkbox"]:hover + span [aria-hidden], 
+[type="checkbox"]:focus + span [aria-hidden] {
+	left: 0.25em;
+	color: #00ccff;
+}
+
+[type="checkbox"]:checked + span:before {
+	background: #00d455;
+}
+
+/*
+RATIO WIDGET
+-------------------------------------------------------------------------------
+*/
+
+.ratio {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 10vh;
+}
+
+.sleepin {
+	position: absolute;
+	top: 0; 
+	right: 0;
+	left: 50%;
+	line-height: 8vh;
+	font-size: 1.5vw;
+	background: #00d455;
+}
+
+.devolepin {
+	position: absolute;
+	top: 0; 
+	right: 50%;
+	left: 0;
+	line-height: 8vh;
+	font-size: 1.5vw;
+	background: #ff5555;
+	transition: right steps(5) 0.5s;
+}
+
+/*
+UTILITY CLASSES
+-------------------------------------------------------------------------------
+*/
+
+.vh {
+	position: absolute;
+	top: -9999px;
+}

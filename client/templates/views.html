@@ -1,5 +1,6 @@
 <template name="start">
-	<h1>Hello Werld!</h1>
+	<h1>{{>titleSVG}}</h1>
+	<p><button>You Play!</button></p>
 </template>
 
 <template name="loading">
@@ -7,9 +8,30 @@
 </template>
 
 <template name="skills">
-	<ul>
-		{{#each skills}}
-			<li>{{this}}</li>
-		{{/each}}
-	</ul>
+	{{>ratio}}
+	<div class="skills-box">
+		{{>devoleporSVG}}
+		<div class="skills-inputs">
+			<h1>What Skills You Lern?</h1>
+			<fieldset>
+				<legend class="vh">skill</legend>
+			{{#each skills}}
+				<label for="{{this}}"><input type="checkbox" value="{{this}}" id="{{this}}"><span>{{this}}<span aria-hidden>&lt;</span></span></label>
+			{{/each}}
+			</fieldset>
+			<div class="center"><button>Cuntinue <span aria-hidden>&gt;</span></button></div>
+		</div>
+	</div>
+</template>
+
+<template name="ratio">
+	<div class="ratio">
+		<div class="sleepin">
+			<span aria-hidden>Sleepin'</span>
+		</div>
+		<div class="devolepin" style="right:{{percent.position}}">
+			<span aria-hidden>Devolepin'</span> 
+			<span class="vh" role="alert" aria-live="assertive">Time spent devoleping at {{percent.value}} percent</span>
+		</div>
+	</div>
 </template>
