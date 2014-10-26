@@ -1,6 +1,6 @@
 <template name="start">
-	<h1>{{>titleSVG}}</h1>
-	<p><button>You Play!</button></p>
+	<h1 class="announce">{{>titleSVG}}</h1>
+	<p class="reveal-box"><button type="button" class="focus-on-load">You Play!</button></p>
 </template>
 
 <template name="loading">
@@ -11,27 +11,37 @@
 	{{>ratio}}
 	<div class="skills-box">
 		{{>devoleporSVG}}
-		<div class="skills-inputs">
-			<h1>What Skills You Lern?</h1>
+		<div class="skills-inputs reveal-box">
+			<h1 class="focus-on-load">What Skills You Lern? <span class="vh">Please choose</span></h1>
 			<fieldset>
 				<legend class="vh">skill</legend>
 			{{#each skills}}
 				<label for="{{this}}"><input type="checkbox" value="{{this}}" id="{{this}}"><span>{{this}}<span aria-hidden>&lt;</span></span></label>
 			{{/each}}
 			</fieldset>
-			<div class="center"><button>Cuntinue <span aria-hidden>&gt;</span></button></div>
+			<div class="center"><button class="continue" type="button">Cuntinue <span aria-hidden="true">&gt;</span></button></div>
 		</div>
 	</div>
 </template>
 
 <template name="ratio">
-	<div class="ratio">
+	<div class="ratio reveal-box">
 		<div class="sleepin">
-			<span aria-hidden>Sleepin'</span>
+			<span aria-hidden="true">Sleepin'</span>
 		</div>
 		<div class="devolepin" style="right:{{percent.position}}">
-			<span aria-hidden>Devolepin'</span> 
-			<span class="vh" role="alert" aria-live="assertive">Time spent devoleping at {{percent.value}} percent</span>
+			<span aria-hidden="true">Devolepin'</span> 
+			<span class="vh" role="alert" aria-live="status">Time spent devoleping at {{percent.value}}</span>
 		</div>
+	</div>
+</template>
+
+<template name="ded">
+	<h1 aria-labelledby="you-are-dead" aria-describedby="coronersReport">
+		{{>dedSVG}}
+	</h1>
+	<div class="reveal-box">
+		<p id="coronersReport">{{{report}}}</p>
+		<p><button>Play Again!</button></p>
 	</div>
 </template>

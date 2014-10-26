@@ -14,6 +14,10 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 	font-weight: 400;
 }
 
+[tabindex="-1"]:focus {
+	outline: none !important;
+}
+
 /*
 LAYOUT
 -------------------------------------------------------------------------------
@@ -22,11 +26,11 @@ LAYOUT
 body {
 	background: #1a1a1a;
 	color: #fff;
-	font-size: 1vw;
+	font-size: 1.25vw;
 	font-family: 'Press Start 2P', monospace;
 }
 
-main {
+main > div {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -37,7 +41,7 @@ main {
 	box-shadow: inset 0 0 100px #000;
 }
 
-main > div {
+main > div > div {
 	display: table-cell;
 	height: 100vh;
 	vertical-align: middle;
@@ -121,6 +125,73 @@ SVGs
           animation: doubleBlink 3s steps(1) infinite; 
 }
 
+#ded {
+  display: block;
+  margin: 0 auto;
+  height: 55vh;
+}
+
+@-webkit-keyframes zoomIn {
+  0% { -webkit-transform: scale(0); transform: scale(0); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+
+@keyframes zoomIn {
+  0% { -webkit-transform: scale(0); transform: scale(0); }
+  100% { -webkit-transform: scale(1); transform: scale(1); }
+}
+
+#ded, #devolepor, #title {
+  -webkit-animation: zoomIn 0.75s 1 steps(5);
+          animation: zoomIn 0.75s 1 steps(5);
+}
+
+@-webkit-keyframes flashRed {
+  0% { fill: #00d455; }
+  50% { fill: #ff5555; }
+  100% { fill: #00d455; }
+}
+
+@keyframes flashRed {
+  0% { fill: #00d455; }
+  50% { fill: #ff5555; }
+  100% { fill: #00d455; }
+}
+
+#youded-text > path {
+  -webkit-animation: flashRed 1s infinite steps(1);
+          animation: flashRed 1s infinite steps(1);
+  -webkit-animation-delay: 1s;
+          animation-delay: 1s;
+}
+
+@-webkit-keyframes bounce {
+  0% { }
+  50% { -webkit-transform: translateY(0.125em); transform: translateY(0.125em) }
+  100% { }
+}
+
+@keyframes bounce {
+  0% { }
+  50% { -webkit-transform: translateY(0.125em); transform: translateY(0.125em) }
+  100% { }
+}
+
+#flies > * {
+  position: relative;
+  -webkit-animation: bounce 0.7s steps(1) infinite;
+          animation: bounce 0.7s steps(1) infinite;
+  -webkit-transform-origin: center center;
+      -ms-transform-origin: center center;
+          transform-origin: center center;
+}
+
+#flies > *:nth-child(odd) {
+  position: relative;
+  -webkit-animation: bounce 0.5s steps(1) infinite;
+          animation: bounce 0.5s steps(1) infinite;
+}
+
 /*
 CONTROLS / FORMS
 -------------------------------------------------------------------------------
@@ -143,7 +214,7 @@ button {
   background: #00ccff;
   font-family: 'Press Start 2P', sans-serif;
   font-weight: 400;
-  font-size: 5vh;
+  font-size: 4vh;
   margin-top: 0.75em;
   padding:0.5em 1em;
   color: #1a1a1a;
@@ -251,6 +322,19 @@ RATIO WIDGET
 	font-size: 1.5vw;
 	background: #ff5555;
 	transition: right steps(5) 0.5s;
+}
+
+/*
+BOX TO REVEAL
+-------------------------------------------------------------------------------
+*/
+
+.reveal-box {
+	opacity: 0;
+}
+
+.reveal-box.opaque {
+	opacity: 1;
 }
 
 /*
