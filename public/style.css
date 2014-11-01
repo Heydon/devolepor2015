@@ -48,6 +48,15 @@ main > div > div {
 	text-align: center;
 }
 
+h1 {
+  font-size: 1.75em;
+}
+
+h1 span {
+  font-size: 0.75em;
+  display: block;
+}
+
 /*
 SVGs
 -------------------------------------------------------------------------------
@@ -125,7 +134,7 @@ SVGs
           animation: doubleBlink 3s steps(1) infinite; 
 }
 
-#ded {
+#ded, #devil {
   display: block;
   margin: 0 auto;
   height: 55vh;
@@ -141,7 +150,7 @@ SVGs
   100% { -webkit-transform: scale(1); transform: scale(1); }
 }
 
-#ded, #devolepor, #title {
+#ded, #devolepor, #title, #devil {
   -webkit-animation: zoomIn 0.75s 1 steps(5);
           animation: zoomIn 0.75s 1 steps(5);
 }
@@ -190,6 +199,21 @@ SVGs
   position: relative;
   -webkit-animation: bounce 0.5s steps(1) infinite;
           animation: bounce 0.5s steps(1) infinite;
+}
+
+@-webkit-keyframes mouth {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+@keyframes mouth {
+  0% { opacity: 1 }
+  50% { opacity: 0 }
+}
+
+#devil-mouth-2 {
+  -webkit-animation: mouth 1s infinite steps(1);
+          animation: mouth 1s infinite steps(1);
 }
 
 /*
@@ -345,4 +369,32 @@ UTILITY CLASSES
 .vh {
 	position: absolute;
 	top: -9999px;
+}
+
+/*
+SOUNDS BUTTON
+-------------------------------------------------------------------------------
+*/
+
+[role="complementary"] [aria-pressed] {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+  font-size: 1em;
+  padding: 0.5em;
+  padding-right: 0;
+  line-height: 1;
+  text-indent: 0.5em;
+}
+
+[role="complementary"] [aria-pressed] [aria-hidden]:before {
+  content: 'ON';
+  background: #00D455;
+  padding: 0.5em;
+  border-left: 1px solid;
+}
+
+[role="complementary"] [aria-pressed="false"] [aria-hidden]:before {
+  content: 'OFF';
+  background: #FF5555;
 }
