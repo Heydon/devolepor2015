@@ -18,6 +18,10 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 	outline: none !important;
 }
 
+a {
+  color: #fff;
+}
+
 /*
 LAYOUT
 -------------------------------------------------------------------------------
@@ -385,6 +389,13 @@ SOUNDS BUTTON
   padding-right: 0;
   line-height: 1;
   text-indent: 0.5em;
+}
+
+[role="complementary"] p {
+  position: absolute;
+  bottom: 1em;
+  left: 1em;
+  margin: 0; 
 }
 
 [role="complementary"] [aria-pressed] [aria-hidden]:before {

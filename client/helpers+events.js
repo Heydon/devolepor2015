@@ -46,7 +46,7 @@ Template.skills.events({
 			setTimeout(function () {
 				chosen.push($(e.currentTarget).val());
 				Session.set('chosenSkills', chosen);
-			}, 750);
+			}, 250);
 		} else {
 			if (Session.get('sounds')) {
 				var soundError = new buzz.sound('/sounds/error.wav');
@@ -54,7 +54,7 @@ Template.skills.events({
 			}
 			setTimeout(function () {
 				Session.set('chosenSkills', _.without(chosen, $(e.currentTarget).val()));
-			}, 750);
+			}, 250);
 		}
 	},
 	'click .continue': function(e) {
